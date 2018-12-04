@@ -29,10 +29,14 @@ with open(pbfile,"r",newline="") as csvfile:
             OTooley=OTooley+1
     Total=Khan+Li+Correy+OTooley
     Winner=[Khan,Li,Correy,OTooley]
-    print(f'Khan: {Khan/Total} ({Khan})')
-    print(f'Li: {Li/Total} ({Li})')
-    print(f'Correy: {Correy/Total} ({Correy})')
-    print(f"O'Tooley: {OTooley/Total} ({OTooley})")
+    Khanperc='{0:.2%}'.format(Khan/Total)
+    Liperc='{0:.2%}'.format(Li/Total)
+    Correyperc='{0:.2%}'.format(Correy/Total)
+    OTooleyperc='{0:.2%}'.format(OTooley/Total)
+    print(f'Khan: {Khanperc} ({Khan})')
+    print(f'Li: {Liperc} ({Li})')
+    print(f'Correy: {Correyperc} ({Correy})')
+    print(f"O'Tooley: {OTooleyperc} ({OTooley})")
     if max(Winner)==Winner[0]:
         print("Winner:Khan")
     elif max(Winner)==Winner[1]:
@@ -46,10 +50,10 @@ with open(r"C:\Users\Sean Lei\Desktop\Bootcamp\HW\Unit3\python-challenge\PyPoll\
     csvwriter=csv.writer(result,delimiter=",")
     csvwriter.writerow([f'Total voters: {len(voter)}'])
     csvwriter.writerow([f'Candidates who received votes: {set(cand)}'])
-    csvwriter.writerow([f'Khan: {Khan/Total} ({Khan})'])
-    csvwriter.writerow([f'Li: {Li/Total} ({Li})'])
-    csvwriter.writerow([f'Correy: {Correy/Total} ({Correy})'])
-    csvwriter.writerow([f"O'Tooley: {OTooley/Total} ({OTooley})"])
+    csvwriter.writerow([f'Khan: {Khanperc} ({Khan})'])
+    csvwriter.writerow([f'Li: {Liperc} ({Li})'])
+    csvwriter.writerow([f'Correy: {Correyperc} ({Correy})'])
+    csvwriter.writerow([f"O'Tooley: {OTooleyperc} ({OTooley})"])
     if max(Winner)==Winner[0]:
         csvwriter.writerow(["Winner:Khan"])
     elif max(Winner)==Winner[1]:
